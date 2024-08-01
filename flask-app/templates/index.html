@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">House Price Prediction</h1>
+    <div class="card">
+        <div class="card-body">
+            <form action="/predict" method="post">
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <select class="form-control" name="city" id="city">
+                        <option value="boston">Boston</option>
+                        <option value="chicago">Chicago</option>
+                        <option value="dallas">Dallas</option>
+                        <option value="hawaii">Hawaii</option>
+                        <option value="losangeles">Los Angeles</option>
+                        <option value="newyork">New York</option>
+                        <option value="sanfrancisco">San Francisco</option>
+                        <option value="washington">Washington</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="beds">Beds:</label>
+                    <input type="number" class="form-control" id="beds" name="beds" required>
+                </div>
+                <div class="form-group">
+                    <label for="baths">Baths:</label>
+                    <input type="number" class="form-control" id="baths" name="baths" required>
+                </div>
+                <div class="form-group">
+                    <label for="square_feet">Square Feet:</label>
+                    <input type="number" class="form-control" id="square_feet" name="square_feet" required>
+                </div>
+                <div class="form-group">
+                    <label for="price_per_sqft">Price per Square Feet:</label>
+                    <input type="number" class="form-control" id="price_per_sqft" name="price_per_sqft" required>
+                </div>
+                <div class="form-group">
+                    <label for="hoa_month">HOA/Month:</label>
+                    <input type="number" class="form-control" id="hoa_month" name="hoa_month" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Predict</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
